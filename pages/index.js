@@ -3,10 +3,14 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
+import CardEvent from "@/components/CardEvent";
+import { getData } from "@/utils/fetchData";
+import Brand from "@/components/Brand";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props.data);
   return (
     <>
       <Head>
@@ -16,6 +20,25 @@ export default function Home() {
       </Head>
 
       <Header />
+      <Brand />
+      <CardEvent
+        data={props.data}
+        title="Featured Events"
+        subTitle="Grow Today"
+      />
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const res = await getData("api/v1/events");
+  const result = res.data;
+
+  console.log("result");
+  console.log(result);
+
+  // Pass data to the page via props
+  return {
+    props: { data: result },
+  };
 }
