@@ -1,12 +1,16 @@
 import axios from "../configs";
 
 export function getData(url, params, token) {
-  return axios.get(`${url}`, {
-    params,
-    // headers: {
-    //   Authorization: `Bearer ${token}`,
-    // },
-  });
+  try {
+    return axios.get(`${url}`, {
+      params,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    return error;
+  }
 }
 
 export async function postData(url, payload, token) {

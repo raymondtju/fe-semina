@@ -29,7 +29,6 @@ export default function FormCheckout({ tickets }) {
           {},
           Cookies.get("token")
         );
-        console.log({ res: res.data });
         res.data.forEach((res) => {
           res.isChecked = false;
         });
@@ -55,8 +54,6 @@ export default function FormCheckout({ tickets }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [payments]);
 
-  console.log({ payments });
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -71,7 +68,7 @@ export default function FormCheckout({ tickets }) {
               type: t.type,
               price: t.price,
             },
-            sumTicket: 1,
+            quantity: 1,
           });
         }
       });
@@ -207,7 +204,7 @@ export default function FormCheckout({ tickets }) {
               <label className="payment-radio h-100 d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center gap-4">
                   <img
-                    src={`${process.env.NEXT_PUBLIC_API_IMAGE}/${payment.imageUrl}`}
+                    src={`${process.env.NEXT_PUBLIC_API_IMAGE}/${payment.image.name}`}
                     alt=""
                   />
                   <div>{payment.type}</div>
