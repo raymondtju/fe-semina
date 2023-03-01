@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import apple from "../../public/images/apple-111.svg";
-import adobe from "../../public/images/adobe.svg";
+import adobe from "../../public/images/Adobe.svg";
 import slack from "../../public/images/slack-21.svg";
 import spotify from "../../public/images/spotify-11.svg";
 import google from "../../public/images/google-2015.svg";

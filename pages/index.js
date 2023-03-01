@@ -40,9 +40,6 @@ export async function getServerSideProps(context) {
   const res = await getData("api/v1/events");
   const result = res.data;
 
-  console.log("result");
-  console.log(result);
-
   // Pass data to the page via props
   return {
     props: { data: result },
