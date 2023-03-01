@@ -6,6 +6,9 @@ import Header from "@/components/Header";
 import CardEvent from "@/components/CardEvent";
 import { getData } from "@/utils/fetchData";
 import Brand from "@/components/Brand";
+import Stories from "@/components/Stories";
+import Statistics from "@/components/Statistics";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +29,9 @@ export default function Home(props) {
         title="Featured Events"
         subTitle="Grow Today"
       />
+      <Stories />
+      <Statistics />
+      <Footer />
     </>
   );
 }
