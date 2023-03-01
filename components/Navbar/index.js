@@ -14,9 +14,9 @@ export default function Navbar() {
   const [token, setToken] = useState("");
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   useEffect(() => {
-  //     return setToken(Cookies.get("token"));
-  //   });
+  useEffect(() => {
+    return setToken(Cookies.get("token"));
+  });
 
   const handleLogout = () => {
     console.log("click");
